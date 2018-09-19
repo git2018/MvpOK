@@ -12,6 +12,7 @@ public interface BaseContract {
     }
 
     interface IPresenter<V>{
-        void setView(V v);
+        void attachView(V view);
+        void detachView();
     }
 }
