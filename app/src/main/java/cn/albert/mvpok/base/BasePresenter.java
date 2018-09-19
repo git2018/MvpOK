@@ -5,22 +5,26 @@ import java.lang.ref.WeakReference;
 /**
  * Presenter的基类
  */
-
 public class BasePresenter<V> implements BaseContract.IPresenter<V> {
-    private WeakReference<V> viewRef;
-    protected V mView;
 
-    @Override
-    public void attachView(V view) {
-        viewRef= new WeakReference<V>(view);
-        mView = viewRef.get();
+    private WeakReference<V> weakRefView;
+
+    public void attachView(V view){
+        weakRefView = new WeakReference<>(view);
     }
 
-    @Override
     public void detachView() {
-        if(viewRef !=null){
-            viewRef.clear();
-            viewRef=null;
+        if(isAttach()) {
+            weakRefView.clear();
+            weakRefView = null;
         }
+    }
+
+    public V getView(){
+        return isAttach()?weakRefView.get():null;
+    }
+
+     public boolean isAttach() {
+        return weakRefView != null && weakRefView.get() != null;
     }
 }

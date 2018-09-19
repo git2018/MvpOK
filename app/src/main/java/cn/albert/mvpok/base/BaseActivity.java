@@ -7,7 +7,7 @@ import android.os.Bundle;
  * Activity的基类，泛型实例化Presenter
  */
 public abstract class BaseActivity<P extends BasePresenter> extends Activity implements BaseContract.IView{
-    public P mPresenter;
+    private P mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +20,10 @@ public abstract class BaseActivity<P extends BasePresenter> extends Activity imp
     protected void onDestroy() {
         super.onDestroy();
         mPresenter.detachView();
+    }
+
+    @Override
+    public P getPresenter() {
+        return mPresenter;
     }
 }

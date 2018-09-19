@@ -6,6 +6,6 @@ public class LoginPresenter extends BasePresenter<LoginContract.IView> implement
 
     @Override
     public void setData() {
-        mView.showData("LoginPresenter DATA");
+        getView().showData("LoginPresenter DATA");
     }
 }

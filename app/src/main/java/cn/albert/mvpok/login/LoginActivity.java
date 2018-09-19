@@ -12,7 +12,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mPresenter.setData();
+        getPresenter().setData();
     }
 
     @Override
@@ -20,4 +20,5 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         TextView tv = findViewById(R.id.txt);
         tv.setText(s);
     }
+
 }
