@@ -1,9 +1,10 @@
 package cn.albert.mvpok.base;
 
-public abstract class BasePresenter<V> {
+public class BasePresenter<V> implements BaseContract.IPresenter<V> {
     public V mView;
 
-    public void setV(V v) {
+    @Override
+    public void setView(V v) {
         this.mView = v;
     }
 }

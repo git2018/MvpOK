@@ -6,7 +6,7 @@ import android.widget.TextView;
 import cn.albert.mvpok.R;
 import cn.albert.mvpok.base.BaseActivity;
 
-public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {
+public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.IView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

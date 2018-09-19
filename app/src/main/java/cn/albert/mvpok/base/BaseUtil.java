@@ -3,7 +3,7 @@ package cn.albert.mvpok.base;
 import java.lang.reflect.ParameterizedType;
 
 /**
- * 泛型实例化工具类
+ *  架构工具类
  */
 public class BaseUtil {
     public static <T> T getT(Object o, int i) {
@@ -14,15 +14,6 @@ public class BaseUtil {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (ClassCastException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public static Class<?> forName(String className) {
-        try {
-            return Class.forName(className);
-        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         return null;

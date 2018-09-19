@@ -1,6 +1,8 @@
 package cn.albert.mvpok.login;
 
-public class LoginPresenter extends LoginContract.Presenter{
+import cn.albert.mvpok.base.BasePresenter;
+
+public class LoginPresenter extends BasePresenter<LoginContract.IView> implements LoginContract.IPresenter {
 
     @Override
     public void setData() {

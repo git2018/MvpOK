@@ -1,21 +1,19 @@
 package cn.albert.mvpok.login;
 
 
-import cn.albert.mvpok.base.BaseModel;
-import cn.albert.mvpok.base.BasePresenter;
-import cn.albert.mvpok.base.BaseView;
+import cn.albert.mvpok.base.BaseContract;
 
 
 public interface LoginContract {
 
-    interface Model extends BaseModel {
+    interface IModel extends BaseContract.IModel {
     }
 
-    interface View extends BaseView {
+    interface IView extends BaseContract.IView {
         void showData(String s);
     }
 
-    abstract class Presenter extends BasePresenter<View> {
-        public abstract void setData();
+    interface IPresenter extends BaseContract.IPresenter<IView> {
+        void setData();
     }
 }

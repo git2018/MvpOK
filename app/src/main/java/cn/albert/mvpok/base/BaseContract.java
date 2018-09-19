@@ -1,15 +1,17 @@
 package cn.albert.mvpok.base;
 
-
+/**
+ * 基础契约类，纯接口定义
+ */
 public interface BaseContract {
 
-    interface BaseModel {
+    interface IModel {
     }
 
-    interface BaseView {
+    interface IView {
     }
 
-    interface BasePresenter<V>{
-        V getPresenter();
+    interface IPresenter<V>{
+        void setView(V v);
     }
 }
