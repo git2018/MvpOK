@@ -1,5 +1,9 @@
 package cn.albert.mvpok.base;
 
+/**
+ * Presenter的基类
+ */
+
 public class BasePresenter<V> implements BaseContract.IPresenter<V> {
     public V mView;
 
